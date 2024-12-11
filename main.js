@@ -7,7 +7,7 @@ const fs = require('fs').promises;
 
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    page.setDefaultNavigationTimeout(6000000); // 60 секунд
+    page.setDefaultNavigationTimeout(6000000); // увеличен таймаут, т.к. несколько тысяч комментариев долго сохранять
 
     let currentUrl = startUrl;
     let allComments = [];
